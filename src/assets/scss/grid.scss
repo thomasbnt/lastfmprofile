@@ -1,0 +1,71 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: var(--quite-black);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  transition: .2s;
+
+  &:hover {
+	color: var(--primary);
+	box-shadow: 3px 6px 8px 0 #1e1e1e12;
+
+	.card__image {
+	  img {
+		transform: scale(1.1);
+	  }
+	}
+  }
+
+  &__image {
+	width: 100%;
+	height: 150px;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	overflow: hidden;
+
+	img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  transition: .2s;
+	}
+  }
+
+  &__content {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+  }
+
+  &__title {
+	font-size: 1.2rem;
+	font-weight: 800;
+  }
+
+  &__artist {
+	font-size: 0.9rem;
+	font-style: italic;
+	flex-grow: 1;
+  }
+
+  &__album {
+	font-size: 0.8rem;
+	color: #5b5757;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid {
+	display: flex;
+	flex-direction: column;
+  }
+}
