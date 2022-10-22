@@ -11,8 +11,14 @@
         </div>
         <div class="card__content">
           <h3 class="card__title">{{ track.name }}</h3>
-          <p class="card__artist"><User size="14"/> {{ track.artist["#text"] }}</p>
-          <p class="card__album"><Library size="14"/> {{ track.album["#text"] }}</p>
+          <p class="card__artist">
+            <User size="14" />
+            {{ track.artist["#text"] }}
+          </p>
+          <p class="card__album">
+            <Library size="14" />
+            {{ track.album["#text"] }}
+          </p>
         </div>
       </a>
     </div>
@@ -35,15 +41,17 @@ export default {
   },
   methods: {
     async getUserRecentTracks() {
-      const customUsername = localStorage.getItem("customUsername") ? localStorage.getItem("customUsername") : import.meta.env.VITE_USERNAME
-      const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
-      const limit = import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS ? import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS : 10
-      const response = await fetch(
-        `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${customUsername}&api_key=${key}&limit=${limit}&format=json`
-      )
-      const data = await response.json()
-      this.recentTracks = data.recenttracks
-      console.log(data.recenttracks)
+      if (localStorage.getItem("lastfm_key")) {
+        const customUsername = localStorage.getItem("customUsername") ? localStorage.getItem("customUsername") : import.meta.env.VITE_USERNAME
+        const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
+        const limit = import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS ? import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS : 10
+        const response = await fetch(
+          `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${customUsername}&api_key=${key}&limit=${limit}&format=json`
+        )
+        const data = await response.json()
+        this.recentTracks = data.recenttracks
+        console.log(data.recenttracks)
+      }
     }
   },
   async created() {
