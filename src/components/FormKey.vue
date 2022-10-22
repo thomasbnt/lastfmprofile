@@ -1,5 +1,4 @@
 <template>
-
   <details open>
     <summary @click="detailsClick">{{ detailsOpened ? "Hide" : "Show" }} settings</summary>
     <div class="formContent">
