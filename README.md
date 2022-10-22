@@ -6,7 +6,7 @@
 
 # Getting data
 
-An example to get your data from the API of **Last.fm**.
+An example to get your data from the API of **Last.fm**. Work with **VueJS**, **fetch** and the **[API of Last.fm](https://www.last.fm/api)**.
 
 > **Note**
 >
@@ -14,7 +14,13 @@ An example to get your data from the API of **Last.fm**.
 
 [![Preview of this project](https://user-images.githubusercontent.com/14293805/197307013-a8faf54f-99f9-4aee-94a1-05f0767e5168.png)](https://lastfmprofile.netlify.app/)
 
-Work with **VueJS**, **fetch** and the **[API of Last.fm](https://www.last.fm/api)**.
+
+> **Note**
+>
+> More projects like that ?  [Check this list](https://github.com/stars/thomasbnt/lists/created-api-stuff).
+>
+> [![See the list of awesome projects with an API](https://img.shields.io/badge/See%20the%20list%20of%20awesome%20projects%20with%20an%20API%20→-informational?style=for-the-badge)](https://github.com/stars/thomasbnt/lists/created-api-stuff)
+
 
 ## How to setup the project ?
 
