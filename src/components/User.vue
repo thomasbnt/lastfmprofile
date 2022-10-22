@@ -69,11 +69,11 @@ header > div {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  box-shadow: var(--primary) 0 0 0 0;
+  box-shadow: var(--primary) 0 0 0 3px;
   transition: .2s;
 
   &:hover {
-    box-shadow: var(--primary) 0 0 0 7px;
+    box-shadow: var(--primary) 0 0 0 6px;
   }
 }
 
