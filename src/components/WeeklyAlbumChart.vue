@@ -1,5 +1,5 @@
 <template>
-  <section id="weeklyAlbumChart">
+  <section id="weeklyAlbumChart" v-if="Chart">
     <header>
       <h2>
         <Library size="24" />

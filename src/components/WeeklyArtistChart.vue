@@ -1,5 +1,5 @@
 <template>
-  <section id="weeklyArtistChart">
+  <section id="weeklyArtistChart" v-if="Chart">
     <header>
       <h2>
         <User size="24" />
