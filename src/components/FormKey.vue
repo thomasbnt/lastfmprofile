@@ -10,12 +10,14 @@
         </a>
       </p>
       <form>
-        <input type="password" autocomplete="false" v-model="key" placeholder="Your Last.fm key here">
+        <label for="lastfm_key">Enter your Last.fm key</label>
+        <input type="password" autocomplete="false" v-model="key" placeholder="key" id="lastfm_key">
         <button @click="saveKey" class="save">Save</button>
         <button @click="deleteKey" class="delete">Delete</button>
       </form>
       <form>
-        <input type="text" autocomplete="false" v-model="customUsername" placeholder="Your Last.FM username">
+        <label for="username">Your Last.fm username</label>
+        <input type="text" autocomplete="true" v-model="username" placeholder="username" id="username">
         <button @click="saveCustomUser" class="save">Save</button>
         <button @click="deleteCustomUser" class="delete">Delete</button>
       </form>
@@ -30,8 +32,8 @@ export default {
   name: "FormKey",
   data() {
     return {
-      customUsername: "",
-      key: "",
+      username: localStorage.getItem("username") ? localStorage.getItem("username") : "",
+      key: localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : "",
       detailsOpened: localStorage.getItem("detailsOpened") ? localStorage.getItem("detailsOpened") : true
     }
   },
@@ -40,23 +42,23 @@ export default {
   },
   methods: {
     saveCustomUser() {
-      if (this.customUsername === "") {
+      if (this.username === "") {
         alert("Please enter your Last.fm username.")
         return
       }
       // Check if username are @
-      if (this.customUsername.includes("@")) {
+      if (this.username.includes("@")) {
         // Remove @
-        this.customUsername = this.customUsername.replace("@", "")
+        this.username = this.username.replace("@", "")
       }
-      localStorage.setItem("customUsername", this.customUsername)
+      localStorage.setItem("username", this.username)
       this.$emit("getUserInfoFromLastFM")
       this.$emit("getWeeklyArtistChart")
       this.$emit("getUserRecentTracks")
     },
     deleteCustomUser() {
-      if (localStorage.getItem("customUsername")) {
-        localStorage.removeItem("customUsername")
+      if (localStorage.getItem("username")) {
+        localStorage.removeItem("username")
       }
     },
     saveKey() {
@@ -83,7 +85,7 @@ export default {
       const url = new URL(window.location.href)
       const username = url.searchParams.get("username")
       console.info(`Username found in URL: ${username}`)
-      localStorage.setItem("customUsername", username)
+      localStorage.setItem("username", username)
     }
     // If key is in the URL, save it in localStorage
     if (window.location.href.includes("key=")) {
@@ -112,8 +114,8 @@ export default {
 }
 
 .save {
-  border: 1px solid #2b681c;
-  color: #2b681c;
+  border: 1px solid var(--quite-black);
+  color: var(--quite-black);
   background-color: white;
 }
 
