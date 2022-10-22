@@ -4,6 +4,7 @@ import FormKey from "./components/FormKey.vue"
 import User from "./components/User.vue"
 import RecentTracks from "./components/RecentTracks.vue"
 import WeeklyArtistChart from "./components/WeeklyArtistChart.vue"
+import MainFooter from "./components/main_footer.vue"
 </script>
 
 <template>
@@ -12,4 +13,6 @@ import WeeklyArtistChart from "./components/WeeklyArtistChart.vue"
   <User />
   <RecentTracks />
   <WeeklyArtistChart />
+
+  <mainFooter />
 </template>

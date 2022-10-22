@@ -85,6 +85,7 @@ button, .btn, input {
   border-radius: 7px;
   margin: 0 .2rem;
   border: unset;
+  font-weight: 600;
 }
 
 button, .btn {
@@ -97,13 +98,12 @@ button, .btn {
   transition: .2s;
 
   &:hover {
-	box-shadow: 1px 2px 4px 0 rgb(32 32 32 / 63%);
+	box-shadow: 3px 3px 0 0 rgb(0 0 0);
   }
 }
 
 form {
   margin: .3rem 0;
-
 }
 
 @media screen and (max-width: 550px) {
@@ -112,5 +112,29 @@ form {
 	flex-direction: column;
 	gap: .4rem;
 	width: 100%;
+  }
+}
+
+input {
+  background-color: #f5f5f5;
+}
+
+summary:hover {
+  user-select: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--quite-black);
+  color: white;
+  padding: 1rem;
+  margin-top: 5rem;
+  border-radius: 5px;
+  user-select: none;
+  a {
+    color: #ffffff;
+    &:hover {
+        color: #fcb0ac;
+    }
   }
 }
