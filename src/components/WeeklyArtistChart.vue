@@ -1,16 +1,19 @@
 <template>
-  <section id="weeklyArtistChart" v-if="Chart">
+  <section id="weeklyArtistChart">
     <header>
-      <h2>Weekly artist chart</h2>
+      <h2>
+        <User size="24" />
+        Weekly artist chart
+      </h2>
       <p>
-        This is your <b>Last.week</b>, the last 7 days of your listening tracks.
-        <a :href='weeklyChartURL' target="_blank" rel="noopener noreferrer">See
+        This is your <b>Last.week</b> of artists, the last 7 days of your listening tracks.
+        <a :href="weeklyChartURL" target="_blank" rel="noopener noreferrer" v-if="weeklyChartURL">See
           more
           <ArrowRight size="14" />
         </a>
       </p>
     </header>
-    <div class="grid">
+    <div class="grid" v-if="Chart">
       <a v-for="artist in Chart" :key="artist.name" class="card" :href="artist.url" target="_blank"
          rel="noopener noreferrer">
         <div class="card__content">
@@ -25,18 +28,32 @@
         </div>
       </a>
     </div>
+    <div class="grid" v-if="Chart.length === 0">
+      <div class="card card__nodata">
+        <div class="card__content">
+          <h3 class="card__title">
+            <Frown size="14" />
+            No artist found
+          </h3>
+          <p class="card__artist">
+            You didn't listen to any artist in the last 7 days
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-import { Play, User, ArrowRight } from "lucide-vue-next"
+import { Play, User, ArrowRight, Frown } from "lucide-vue-next"
 
 export default {
   name: "WeeklyArtistChart",
   components: {
     ArrowRight,
     Play,
-    User
+    User,
+    Frown
   },
   data() {
     return {
@@ -47,16 +64,19 @@ export default {
   methods: {
     async getWeeklyArtistChart() {
       if (localStorage.getItem("lastfm_key")) {
-        const customUsername = localStorage.getItem("customUsername") ? localStorage.getItem("customUsername") : import.meta.env.VITE_USERNAME
+        const username = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME
         const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
         const limit = import.meta.env.VITE_LASTFM_LIMIT_FOR_ARTIST_CHART ? import.meta.env.VITE_LASTFM_LIMIT_FOR_ARTIST_CHART : 10
-        const response = await fetch(
-          `https://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=${customUsername}&api_key=${key}&limit=${limit}&format=json`
-        )
-        const data = await response.json()
-        console.log(data.weeklyartistchart.artist)
-        this.Chart = data.weeklyartistchart.artist
-        this.weeklyChartURL = `https://www.last.fm/user/${customUsername}/listening-report/week`
+        try {
+          const response = await fetch(
+            `https://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=${username}&api_key=${key}&limit=${limit}&format=json`
+          )
+          const data = await response.json()
+          this.Chart = data.weeklyartistchart.artist
+          this.weeklyChartURL = `https://www.last.fm/user/${username}/listening-report/week`
+        } catch (error) {
+          this.weeklyChartURL = ""
+        }
       }
     }
   },
@@ -67,5 +87,7 @@ export default {
 </script>
 
 <style scoped>
-
+.card__content {
+  align-items: center;
+}
 </style>
