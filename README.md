@@ -3,7 +3,7 @@
 [![Discord](https://img.shields.io/discord/367753345575944221?color=%237289DA&label=Discord%20server&logo=discord&logoColor=white)](https://thomasbnt.dev/discord)
 [![Twitter Follow](https://img.shields.io/twitter/follow/Thomasbnt_?color=%231DA1F2&label=Follow%20me&logo=Twitter&logoColor=white)](https://twitter.com/Thomasbnt_)
 [![Last.fm profile](https://img.shields.io/badge/follow%20me%20on-Last.fm-af0000)](https://www.last.fm/user/thomasbnt)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/251ae608-3097-4897-a251-b6fdd70b5494/deploy-status)](https://app.netlify.com/sites/lastfmprofile/deploys)
 # Getting data
 
 An example to get your data from **Last.fm**. Work with **VueJS**, **fetch** and the **[API of Last.fm](https://www.last.fm/api)**.
