@@ -27,7 +27,7 @@ body {
 
 :root {
   --primary: #AF0000;
-  --quite-black: #1e1e1e;
+  --quite-black: #151515;
   --background-primary: #a30101;
 }
 
@@ -71,7 +71,7 @@ b {
 }
 
 section {
-  margin: 3rem 0;
+  margin: 6rem 0;
 
   header {
 	margin-bottom: 2rem;
@@ -79,7 +79,6 @@ section {
   }
 }
 
-// Buttons and input
 button, .btn, input {
   padding: .7rem 2.2rem;
   border-radius: 7px;
@@ -96,6 +95,7 @@ button, .btn {
   display: inline-block;
   cursor: pointer;
   transition: .2s;
+  text-transform: uppercase;
 
   &:hover {
 	box-shadow: 3px 3px 0 0 rgb(0 0 0);
@@ -115,26 +115,49 @@ form {
   }
 }
 
+label {
+  display: block;
+  margin-bottom: .2rem;
+  font-weight: 600;
+}
+
 input {
   background-color: #f5f5f5;
 }
 
-summary:hover {
-  user-select: none;
-  cursor: pointer;
+summary {
+  text-transform: uppercase;
+
+  &:hover {
+	user-select: none;
+	cursor: pointer;
+  }
+}
+
+@keyframes sweep {
+  0% {
+	opacity: 0;
+	transform: translateY(-10px)
+  }
+  100% {
+	opacity: 1;
+	transform: translateY(0)
+  }
 }
 
 footer {
   background-color: var(--quite-black);
   color: white;
-  padding: 1rem;
+  padding: 2rem 1rem 3rem 1rem;
   margin-top: 5rem;
   border-radius: 5px;
   user-select: none;
+
   a {
-    color: #ffffff;
-    &:hover {
-        color: #fcb0ac;
-    }
+	color: #ffffff;
+
+	&:hover {
+	  color: #fcb0ac;
+	}
   }
 }
