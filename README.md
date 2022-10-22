@@ -23,6 +23,7 @@ Edit the [`.env.example`](.env.example) into `.env` and add your **Last.fm API k
 ```bash
 # .env
 VITE_USERNAME=thomasbnt
+# Caution : VITE_ prefix is required, and he show to the client your key.
 VITE_LASTFM_KEY=YOUR_API_KEY
 ```
 

@@ -30,8 +30,9 @@ export default {
   methods: {
     async getUserInfoFromLastFM() {
       const customUsername = localStorage.getItem("customUsername") ? localStorage.getItem("customUsername") : import.meta.env.VITE_USERNAME
+      const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
       const response = await fetch(
-        `https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${customUsername}&api_key=${import.meta.env.VITE_LASTFM_KEY}&format=json`
+        `https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${customUsername}&api_key=${key}&format=json`
       )
       const data = await response.json()
       console.log(data.user)

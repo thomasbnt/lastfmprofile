@@ -1,20 +1,27 @@
 <template>
   <div class="formContent">
-    <p>You can, if you want test with your username.</p>
+    <p>If you want test that, you must add your <b>Last.fm key</b>.
+      <a href="https://github.com/thomasbnt/lastfmprofile#and-how-to-get-the-lastfm-api-key-" target="_blank"
+         rel="noopener noreferrer">How to get that?
+        <ArrowRight size="14" />
+      </a>
+    </p>
+    <form>
+      <input type="password" autocomplete="false" v-model="key" placeholder="Your Last.fm key here">
+      <button @click="saveKey" class="save">Save</button>
+      <button @click="deleteKey" class="delete">Delete</button>
+    </form>
     <form>
       <input type="text" autocomplete="false" v-model="customUsername" placeholder="Your username without @">
       <button @click="saveCustomUser" class="save">Save</button>
       <button @click="deleteCustomUser" class="delete">Delete</button>
     </form>
-    <!--    <form>
-          <input type="password" autocomplete="false" v-model="key" placeholder="Your Last.fm key here">
-          <button @click="saveKey" class="save">Save</button>
-          <button @click="deleteKey" class="delete">Delete</button>
-        </form>-->
   </div>
 </template>
 
 <script>
+import { ArrowRight } from "lucide-vue-next"
+
 export default {
   name: "FormKey",
   data() {
@@ -22,6 +29,9 @@ export default {
       customUsername: "",
       key: ""
     }
+  },
+  components: {
+    ArrowRight
   },
   methods: {
     saveCustomUser() {
@@ -64,18 +74,12 @@ export default {
   padding: 1rem;
   background-color: #dbdbdb;
   border-radius: 5px;
+
   > p {
     margin-bottom: 1rem;
   }
 }
-@media screen and (max-width: 550px) {
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-    width: 100%;
-  }
-}
+
 .save {
   background-color: #2b681c;
 }

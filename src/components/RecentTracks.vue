@@ -36,9 +36,10 @@ export default {
   methods: {
     async getUserRecentTracks() {
       const customUsername = localStorage.getItem("customUsername") ? localStorage.getItem("customUsername") : import.meta.env.VITE_USERNAME
+      const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
       const limit = import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS ? import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS : 10
       const response = await fetch(
-        `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${customUsername}&api_key=${import.meta.env.VITE_LASTFM_KEY}&limit=${limit}&format=json`
+        `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${customUsername}&api_key=${key}&limit=${limit}&format=json`
       )
       const data = await response.json()
       this.recentTracks = data.recenttracks

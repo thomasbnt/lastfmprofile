@@ -78,6 +78,7 @@ section {
 
   }
 }
+
 // Buttons and input
 button, .btn, input {
   padding: .7rem 2.2rem;
@@ -94,7 +95,22 @@ button, .btn {
   display: inline-block;
   cursor: pointer;
   transition: .2s;
+
   &:hover {
-    box-shadow: 1px 2px 4px 0 rgb(32 32 32 / 63%);
+	box-shadow: 1px 2px 4px 0 rgb(32 32 32 / 63%);
+  }
+}
+
+form {
+  margin: .3rem 0;
+
+}
+
+@media screen and (max-width: 550px) {
+  form {
+	display: flex;
+	flex-direction: column;
+	gap: .4rem;
+	width: 100%;
   }
 }
