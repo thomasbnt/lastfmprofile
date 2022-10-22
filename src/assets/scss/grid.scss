@@ -12,10 +12,13 @@
   border-radius: 0.5rem;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   transition: .2s;
+  user-select: none;
+  animation: sweep .3s ease-in-out;
 
   &:hover {
 	color: var(--primary);
 	box-shadow: 3px 6px 8px 0 #1e1e1e12;
+	transform: translateY(-3px);
 
 	.card__image {
 	  img {
@@ -44,6 +47,19 @@
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	justify-content: space-between;
+  }
+
+  &__row {
+	display: flex;
+	margin-top: 2.5rem;
+	flex-direction: row;
+	justify-content: space-between;
+
+
+	> .card__artist {
+	  flex-grow: 0;
+	}
   }
 
   &__title {
@@ -51,15 +67,30 @@
 	font-weight: 800;
   }
 
+  &__rank {
+	font-size: .9rem;
+  }
+
   &__artist {
 	font-size: 0.9rem;
 	font-style: italic;
 	flex-grow: 1;
+	margin-top: 0.2rem;
+	line-height: 1.3rem;
   }
 
   &__album {
 	font-size: 0.8rem;
 	color: #5b5757;
+  }
+
+  &__nodata {
+	grid-column-end: 4;
+	grid-column-start: 1;
+	align-items: start;
+	> .card__content {
+	  align-items: start;
+	}
   }
 }
 
