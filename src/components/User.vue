@@ -1,12 +1,15 @@
 <template>
-  <div v-if="User">
+  <div v-if="ErrorUserNotFound" class="errNotFound">
+    {{ ErrorUserNotFound }}
+  </div>
+  <section v-if="User">
     <header>
       <div>
         <a :href="User.url" target="_blank" rel="noopener noreferrer" v-if="UserImage">
           <img :src="UserImage" :alt="User.name + '\'s profile'" class="user_image">
         </a>
         <a :href="User.url" target="_blank" rel="noopener noreferrer" v-else>
-          <img src="/src/assets/img/no_user.png" :alt="User.name + '\'s profile'" class="user_image">
+          <img src="/img/no_user.png" :alt="User.name + '\'s profile'" class="user_image">
 
         </a>
         <div>
@@ -17,32 +20,37 @@
         </div>
       </div>
     </header>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: "LFMUser",
+  name: "User",
   data() {
     return {
       User: "",
       UserImage: "/assets/img/no_user.png",
-      UserRegisteredSince: ""
+      UserRegisteredSince: "",
+      ErrorUserNotFound: ""
     }
   },
   methods: {
     async getUserInfoFromLastFM() {
       if (localStorage.getItem("lastfm_key")) {
-        const customUsername = localStorage.getItem("customUsername") ? localStorage.getItem("customUsername") : import.meta.env.VITE_USERNAME
+        const customUsername = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME
         const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
-        const response = await fetch(
-          `https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${customUsername}&api_key=${key}&format=json`
-        )
-        const data = await response.json()
-        console.log(data.user)
-        this.User = data.user
-        this.UserImage = this.User.image[1]["#text"]
-        this.UserRegisteredSince = this.unixTimeToDate(this.User.registered.unixtime)
+        try {
+          const response = await fetch(
+            `https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${customUsername}&api_key=${key}&format=json`
+          )
+          const data = await response.json()
+          this.User = data.user
+          this.UserImage = this.User.image[1]["#text"]
+          this.UserRegisteredSince = this.unixTimeToDate(this.User.registered.unixtime)
+        } catch (error) {
+          this.ErrorUserNotFound = `Username not found or no data for ${customUsername}.`
+          localStorage.removeItem("username")
+        }
       }
     },
     unixTimeToDate(unixTime) {
@@ -57,12 +65,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 header > div {
   display: flex;
   align-items: center;
   gap: 2rem;
   margin: 2rem 0;
+  justify-content: center;
 }
 
 .user_image {
@@ -82,6 +90,14 @@ header > div {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.errNotFound {
+  padding: 0.2rem 1rem;
+  background-color: #c9342a;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 5px;
 }
 
 </style>
