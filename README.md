@@ -12,13 +12,13 @@ An example to get your data from the API of **Last.fm**.
 >
 > [See the preview of this project here →](https://lastfmprofile.netlify.app/)
 
-[![Preview of this project]()](https://lastfmprofile.netlify.app/)
+[![Preview of this project](https://user-images.githubusercontent.com/14293805/197307013-a8faf54f-99f9-4aee-94a1-05f0767e5168.png)](https://lastfmprofile.netlify.app/)
 
 Work with **VueJS**, **fetch** and the **[API of Last.fm](https://www.last.fm/api)**.
 
 ## How to setup the project ?
 
-Edit the `[.en.example](.env.example)` into `.env` and add your **Last.fm API key**.
+Edit the [`.env.example`](.env.example) into `.env` and add your **Last.fm API key**.
 
 ```bash
 # .env
