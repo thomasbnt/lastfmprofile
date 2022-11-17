@@ -802,10 +802,10 @@ lodash.merge@^4.6.2:
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lucide-vue-next@^0.93.0:
-  version "0.93.0"
-  resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.93.0.tgz#a72f2794ef6ee0581ccde17d6deb77248b9363f4"
-  integrity sha512-5Fu43XUGWSsFpPzZGHSUvJTaI21RaI4qmusY9SiFVtqkIOdPNqzkoNWBHzY8eSDUtD0FbQl2xl8FvbpoztF60w==
+lucide-vue-next@^0.101.0:
+  version "0.101.0"
+  resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.101.0.tgz#df443f312fb4f8394809f32a1c12ad4b7b8d8e9f"
+  integrity sha512-25q+zmJakZlHK2VHW5kIR3V+ieQ8nlC3WKlBtF2dDPgFwMv7O3MxDd/pDq+yFQktM3dBmVjcljZMo8XvE5I4uQ==
 
 magic-string@^0.25.7:
   version "0.25.9"
