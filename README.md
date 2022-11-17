@@ -1,9 +1,12 @@
-[![Make with VueJS](https://img.shields.io/badge/-Make%20with%20Vue.js-4fc08d?&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
+[![Made with VueJS](https://img.shields.io/badge/-Made%20with%20Vue.js-4fc08d?&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 ![GitHub last commit](https://img.shields.io/github/last-commit/thomasbnt/lastfmprofile)
-[![Discord](https://img.shields.io/discord/367753345575944221?color=%237289DA&label=Discord%20server&logo=discord&logoColor=white)](https://thomasbnt.dev/discord)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Thomasbnt_?color=%231DA1F2&label=Follow%20me&logo=Twitter&logoColor=white)](https://twitter.com/Thomasbnt_)
-[![Last.fm profile](https://img.shields.io/badge/follow%20me%20on-Last.fm-af0000)](https://www.last.fm/user/thomasbnt)
+[![Depfu](https://badges.depfu.com/badges/d58e1739b5b419966ab0ee6fba8c13da/count.svg)](https://depfu.com/github/thomasbnt/lastfmprofile?project_id=36899)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/251ae608-3097-4897-a251-b6fdd70b5494/deploy-status)](https://app.netlify.com/sites/lastfmprofile/deploys)
+[![Discord](https://img.shields.io/discord/367753345575944221?color=%237289DA&label=Discord%20server&logo=discord&logoColor=white)](https://thomasbnt.dev/discord)
+[![Twitter Follow](https://img.shields.io/twitter/follow/Thomasbnt_?color=%231DA1F2&label=Follow%20me&logo=Twitter)](https://twitter.com/Thomasbnt_)
+[![Last.fm profile](https://img.shields.io/badge/Follow%20me%20on-Last.fm-af0000)](https://www.last.fm/user/thomasbnt)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor%20me%20on%20GitHub%20-%23EA54AE.svg?&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/thomasbnt) 
+
 # Getting data
 
 An example to get your data from **Last.fm**. Work with **VueJS**, **fetch** and the **[API of Last.fm](https://www.last.fm/api)**.
