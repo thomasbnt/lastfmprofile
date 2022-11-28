@@ -1,7 +1,6 @@
 [![Made with VueJS](https://img.shields.io/badge/-Made%20with%20Vue.js-4fc08d?&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 ![GitHub last commit](https://img.shields.io/github/last-commit/thomasbnt/lastfmprofile)
 [![Depfu](https://badges.depfu.com/badges/d58e1739b5b419966ab0ee6fba8c13da/count.svg)](https://depfu.com/github/thomasbnt/lastfmprofile?project_id=36899)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/251ae608-3097-4897-a251-b6fdd70b5494/deploy-status)](https://app.netlify.com/sites/lastfmprofile/deploys)
 [![Discord](https://img.shields.io/discord/367753345575944221?color=%237289DA&label=Discord%20server&logo=discord&logoColor=white)](https://thomasbnt.dev/discord)
 [![Twitter Follow](https://img.shields.io/twitter/follow/Thomasbnt_?color=%231DA1F2&label=Follow%20me&logo=Twitter)](https://twitter.com/Thomasbnt_)
 [![Last.fm profile](https://img.shields.io/badge/Follow%20me%20on-Last.fm-af0000)](https://www.last.fm/user/thomasbnt)
@@ -13,9 +12,9 @@ An example to get your data from **Last.fm**. Work with **VueJS**, **fetch** and
 
 > **Note**
 >
-> [See the preview of this project here →](https://lastfmprofile.netlify.app/)
+> [See the preview of this project here →](https://lastfmprofile.pages.dev/)
 
-[![Preview of this project](https://user-images.githubusercontent.com/14293805/197307013-a8faf54f-99f9-4aee-94a1-05f0767e5168.png)](https://lastfmprofile.netlify.app/)
+[![Preview of this project](https://user-images.githubusercontent.com/14293805/197307013-a8faf54f-99f9-4aee-94a1-05f0767e5168.png)](https://lastfmprofile.pages.dev/)
 
 You can test the project in two ways. Either you enter the two values in the form settings or you fill in the data directly in the URL :
 
