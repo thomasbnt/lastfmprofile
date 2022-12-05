@@ -12,14 +12,14 @@ An example to get your data from **Last.fm**. Work with **VueJS**, **fetch** and
 
 > **Note**
 >
-> [See the preview of this project here →](https://lastfmprofile.pages.dev/)
+> [See the preview of this project here →](https://lastfmprofile.thomasbnt.dev/)
 
-[![Preview of this project](https://user-images.githubusercontent.com/14293805/197307013-a8faf54f-99f9-4aee-94a1-05f0767e5168.png)](https://lastfmprofile.pages.dev/)
+[![Preview of this project](https://user-images.githubusercontent.com/14293805/197307013-a8faf54f-99f9-4aee-94a1-05f0767e5168.png)](https://lastfmprofile.thomasbnt.dev/)
 
 You can test the project in two ways. Either you enter the two values in the form settings or you fill in the data directly in the URL :
 
 ```
-https://lastfmprofile.netlify.app/?key=YOUR_LASTFM_KEY&username=YOUR_LASTFM_USERNAME
+https://lastfmprofile.thomasbnt.dev//?key=YOUR_LASTFM_KEY&username=YOUR_LASTFM_USERNAME
 ```
 
 `key` is your **API key** and `username` is your **username** on **Last.fm**.
