@@ -19,7 +19,7 @@ An example to get your data from **Last.fm**. Work with **VueJS**, **fetch** and
 You can test the project in two ways. Either you enter the two values in the form settings or you fill in the data directly in the URL :
 
 ```
-https://lastfmprofile.thomasbnt.dev//?key=YOUR_LASTFM_KEY&username=YOUR_LASTFM_USERNAME
+https://lastfmprofile.thomasbnt.dev/?key=YOUR_LASTFM_KEY&username=YOUR_LASTFM_USERNAME
 ```
 
 `key` is your **API key** and `username` is your **username** on **Last.fm**.
@@ -47,7 +47,7 @@ VITE_LASTFM_KEY=YOUR_API_KEY
 
 ### And how to get the Last.fm API key ?
 
-You can get your **Last.fm API key** [here](https://www.last.fm/api/account/create).
+You can get your **Last.fm API key** [here](https://www.last.fm/api/account/create) or [grab an already created key](https://www.last.fm/api/accounts).
 
 
 ## The behind the scene
