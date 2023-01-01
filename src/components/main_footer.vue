@@ -9,7 +9,7 @@
       </p>
       <p class="footer__text">
         <Zap size="14" />
-        Created with Vue.js, Vite, Lucide and Last.fm API. Powered by Netlify.
+        Created with Vue.js, Vite, Lucide and Last.fm API.
       </p>
     </div>
     <div class="footer__note">
