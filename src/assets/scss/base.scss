@@ -18,7 +18,6 @@ body {
   font-family: "Lato", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
   "Helvetica Neue", sans-serif;
   font-size: 1.1rem;
-  margin: 8px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -146,11 +145,16 @@ summary {
 }
 
 footer {
+  div  {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3px;
+    font-weight: normal;
+  }
   background-color: var(--quite-black);
   color: white;
   padding: 2rem 1rem 3rem 1rem;
   margin-top: 5rem;
-  border-radius: 5px;
   user-select: none;
 
   a {

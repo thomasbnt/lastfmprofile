@@ -1,9 +1,10 @@
 @import "@/assets/scss/base";
 @import "grid.scss";
 
-#app {
+section {
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 2rem auto;
+	padding: 0 3px;
 	font-weight: normal;
 }
 
