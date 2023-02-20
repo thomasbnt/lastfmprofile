@@ -2,6 +2,11 @@
   <div v-if="ErrorUserNotFound" class="errNotFound">
     {{ ErrorUserNotFound }}
   </div>
+  <section v-if="!User" class="user_not_connected">
+    <h1>Hello !</h1>
+    <h2>Explore your music habits with personalized Last.fm statistics. Find out more about your listening habits right from this page.</h2>
+    <small>To get your profile, insert your Last.fm key in settings section.</small>
+  </section>
   <section v-if="User">
     <header>
       <div>
@@ -73,6 +78,19 @@ header > div {
   justify-content: center;
 }
 
+.user_not_connected {
+  user-select: none;
+  padding: 2rem 30%;
+  margin: 8rem auto;
+  h2 {
+    margin-top: 1rem;
+    font-weight: normal;
+  }
+  @media screen and (max-width: 700px) {
+    margin: 3rem auto;
+    padding: .4rem 3rem;
+  }
+}
 .user_image {
   width: 100px;
   height: 100px;
