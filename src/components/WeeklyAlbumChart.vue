@@ -81,7 +81,6 @@ export default {
           const data = await response.json()
           this.Chart = data.weeklyalbumchart.album
           this.weeklyChartURL = `https://www.last.fm/user/${username}/listening-report/week`
-          console.log(this.weeklyChartURL)
         } catch (error) {
           this.weeklyChartURL = ``
         }
