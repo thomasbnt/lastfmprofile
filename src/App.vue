@@ -11,11 +11,11 @@ import MainFooter from "./components/main_footer.vue"
 <template>
   <section>
     <NoteOSS />
-    <FormKey />
     <User />
     <RecentTracks />
     <WeeklyArtistChart />
     <WeeklyAlbumChart />
+    <FormKey />
   </section>
   <MainFooter />
 </template>
