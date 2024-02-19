@@ -9,7 +9,7 @@
     "lint:fix": "eslint --fix ./src"
   },
   "dependencies": {
-    "lucide-vue-next": "^0.287.0",
+    "lucide-vue-next": "^0.331.0",
     "vue": "^3.4.19"
   },
   "devDependencies": {
