@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Lato';
-  src: url('@/assets/fonts/Lato-Regular.ttf');
+  font-family: "Lato";
+  src: url("@/assets/fonts/Lato-Regular.ttf");
 }
 
 *,
@@ -16,7 +16,7 @@ body {
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: "Lato", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-  "Helvetica Neue", sans-serif;
+    "Helvetica Neue", sans-serif;
   font-size: 1.1rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +25,7 @@ body {
 }
 
 :root {
-  --primary: #AF0000;
+  --primary: #af0000;
   --quite-black: #151515;
   --background-primary: #a30101;
 }
@@ -35,12 +35,10 @@ h1 {
   font-weight: 600;
 }
 
-
 h2 {
   font-size: 1.5rem;
   font-weight: 600;
 }
-
 
 h3 {
   font-size: 1.2rem;
@@ -49,15 +47,15 @@ h3 {
 
 @media screen and (max-width: 700px) {
   h1 {
-	font-size: 2rem;
+    font-size: 2rem;
   }
 
   h2 {
-	font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
   h3 {
-	font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
@@ -73,50 +71,52 @@ section {
   margin: 6rem 0;
 
   header {
-	margin-bottom: 2rem;
-
+    margin-bottom: 2rem;
   }
 }
 
-button, .btn, input {
-  padding: .7rem 2.2rem;
+button,
+.btn,
+input {
+  padding: 0.7rem 2.2rem;
   border-radius: 7px;
-  margin: 0 .2rem;
+  margin: 0 0.2rem;
   border: unset;
   font-weight: 600;
 }
 
-button, .btn {
+button,
+.btn {
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
   text-transform: uppercase;
 
   &:hover {
-	box-shadow: 3px 3px 0 0 rgb(0 0 0);
+    box-shadow: 3px 3px 0 0 rgb(0 0 0);
   }
 }
 
 form {
-  margin: .3rem 0;
+  margin: 0.3rem 0;
 }
 
 @media screen and (max-width: 550px) {
   form {
-	display: flex;
-	flex-direction: column;
-	gap: .4rem;
-	width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
   }
 }
 
 label {
   display: block;
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
   font-weight: 600;
 }
 
@@ -128,24 +128,24 @@ summary {
   text-transform: uppercase;
 
   &:hover {
-	user-select: none;
-	cursor: pointer;
+    user-select: none;
+    cursor: pointer;
   }
 }
 
 @keyframes sweep {
   0% {
-	opacity: 0;
-	transform: translateY(-10px)
+    opacity: 0;
+    transform: translateY(-10px);
   }
   100% {
-	opacity: 1;
-	transform: translateY(0)
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 footer {
-  div  {
+  div {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 3px;
@@ -158,10 +158,10 @@ footer {
   user-select: none;
 
   a {
-	color: #ffffff;
+    color: #ffffff;
 
-	&:hover {
-	  color: #fcb0ac;
-	}
+    &:hover {
+      color: #fcb0ac;
+    }
   }
 }

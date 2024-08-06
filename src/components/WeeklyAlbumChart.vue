@@ -7,30 +7,26 @@
       </h2>
       <p>
         This is your <b>Last.week</b> of albums, the last 7 days of your listening tracks.
-        <a :href="weeklyChartURL" target="_blank" rel="noopener noreferrer" v-if="weeklyChartURL">See
-          more
+        <a :href="weeklyChartURL" target="_blank" rel="noopener noreferrer" v-if="weeklyChartURL"
+          >See more
           <ArrowRight size="14" />
         </a>
       </p>
     </header>
     <div class="grid" v-if="Chart">
-      <a v-for="album in Chart" :key="album.name" class="card" :href="album.url" target="_blank"
-         rel="noopener noreferrer">
+      <a v-for="album in Chart" :key="album.name" class="card" :href="album.url" target="_blank" rel="noopener noreferrer">
         <div class="card__content">
           <h3 class="card__title">
             <User size="14" />
             {{ album.name }}
           </h3>
           <div class="card__row">
-            <p class="card__rank">
-              n°{{ album["@attr"].rank }}
-            </p>
+            <p class="card__rank">n°{{ album["@attr"].rank }}</p>
             <p class="card__artist">
               <Play size="14" />
               {{ album.playcount }} plays
             </p>
           </div>
-
         </div>
       </a>
     </div>
@@ -41,9 +37,7 @@
             <Frown size="14" />
             No artist found
           </h3>
-          <p class="card__artist">
-            You didn't listen to any artist in the last 7 days
-          </p>
+          <p class="card__artist">You didn't listen to any artist in the last 7 days</p>
         </div>
       </div>
     </div>
@@ -60,12 +54,12 @@ export default {
     Play,
     User,
     Frown,
-    Library
+    Library,
   },
   data() {
     return {
       Chart: "",
-      weeklyChartURL: ""
+      weeklyChartURL: "",
     }
   },
   methods: {
@@ -84,15 +78,13 @@ export default {
         } catch (error) {
           this.weeklyChartURL = ``
         }
-
       }
-    }
+    },
   },
   async created() {
     await this.getWeeklyAlbumChart()
-  }
+  },
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

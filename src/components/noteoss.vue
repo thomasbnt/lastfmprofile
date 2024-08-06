@@ -2,18 +2,16 @@
   <div>
     <p class="note_oss">
       This page is <b>Open Source on GitHub</b>. Don't hesitate
-      <a
-        href="https://github.com/thomasbnt/lastfmprofile"
-        target="_blank"
-        rel="noopener noreferrer">
+      <a href="https://github.com/thomasbnt/lastfmprofile" target="_blank" rel="noopener noreferrer">
         to follow me and contribute to this repository
-      </a> !
+      </a>
+      !
     </p>
   </div>
 </template>
 <script>
 export default {
-  name: "noteoss"
+  name: "noteoss",
 }
 </script>
 <style lang="scss" scoped>
@@ -32,5 +30,4 @@ div {
     color: white;
   }
 }
-
 </style>

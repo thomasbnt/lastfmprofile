@@ -3,13 +3,20 @@
     <header>
       <h2>
         <Hourglass size="24" />
-        Recent tracks</h2>
+        Recent tracks
+      </h2>
     </header>
     <div class="grid">
-      <a v-for="track in recentTracks.track.slice(0, this.limit)" :key="track.name" class="card" :href="track.url" target="_blank"
-         rel="noopener noreferrer">
-        <div class="card__image" v-if="track.image[2]['#text'] ">
-          <img :src="track.image[2]['#text']" :alt="track.name">
+      <a
+        v-for="track in recentTracks.track.slice(0, this.limit)"
+        :key="track.name"
+        class="card"
+        :href="track.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="card__image" v-if="track.image[2]['#text']">
+          <img :src="track.image[2]['#text']" :alt="track.name" />
         </div>
         <div class="card__content">
           <h3 class="card__title">{{ track.name }}</h3>
@@ -35,12 +42,12 @@ export default {
   components: {
     User,
     Library,
-    Hourglass
+    Hourglass,
   },
   data() {
     return {
       recentTracks: "",
-      limit: import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS ? import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS : 10
+      limit: import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS ? import.meta.env.VITE_LASTFM_LIMIT_FOR_RECENT_TRACKS : 10,
     }
   },
   methods: {
@@ -54,14 +61,12 @@ export default {
         const data = await response.json()
         this.recentTracks = data.recenttracks
       }
-    }
+    },
   },
   async created() {
     await this.getUserRecentTracks()
-  }
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

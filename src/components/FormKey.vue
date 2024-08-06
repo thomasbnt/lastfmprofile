@@ -2,21 +2,22 @@
   <details open>
     <summary @click="detailsClick">{{ detailsOpened ? "Hide" : "Show" }} settings</summary>
     <div class="formContent">
-      <p>If you want test that, you must add your <b>Last.fm key</b>.
-        <a href="https://github.com/thomasbnt/lastfmprofile#and-how-to-get-the-lastfm-api-key-" target="_blank"
-           rel="noopener noreferrer">How to get that?
+      <p>
+        If you want test that, you must add your <b>Last.fm key</b>.
+        <a href="https://github.com/thomasbnt/lastfmprofile#and-how-to-get-the-lastfm-api-key-" target="_blank" rel="noopener noreferrer"
+          >How to get that?
           <ArrowRight size="14" />
         </a>
       </p>
       <form>
         <label for="lastfm_key">Enter your Last.fm key</label>
-        <input type="password" autocomplete="false" v-model="key" placeholder="key" id="lastfm_key">
+        <input type="password" autocomplete="false" v-model="key" placeholder="key" id="lastfm_key" />
         <button @click="saveKey" class="save">Save</button>
         <button @click="deleteKey" class="delete">Delete</button>
       </form>
       <form>
         <label for="username">Your Last.fm username</label>
-        <input type="text" autocomplete="true" v-model="username" placeholder="username" id="username">
+        <input type="text" autocomplete="true" v-model="username" placeholder="username" id="username" />
         <button @click="saveCustomUser" class="save">Save</button>
         <button @click="deleteCustomUser" class="delete">Delete</button>
       </form>
@@ -33,11 +34,11 @@ export default {
     return {
       username: localStorage.getItem("username") ? localStorage.getItem("username") : "",
       key: localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : "",
-      detailsOpened: localStorage.getItem("detailsOpened") ? localStorage.getItem("detailsOpened") : true
+      detailsOpened: localStorage.getItem("detailsOpened") ? localStorage.getItem("detailsOpened") : true,
     }
   },
   components: {
-    ArrowRight
+    ArrowRight,
   },
   methods: {
     saveCustomUser() {
@@ -76,7 +77,7 @@ export default {
     detailsClick() {
       localStorage.setItem("detailsOpened", this.detailsOpened)
       this.detailsOpened = !this.detailsOpened
-    }
+    },
   },
   created() {
     // If username is in the URL, save it in localStorage
@@ -93,7 +94,7 @@ export default {
       console.info(`Key found in URL: ${key}`)
       localStorage.setItem("lastfm_key", key)
     }
-  }
+  },
 }
 </script>
 

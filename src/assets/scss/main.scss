@@ -2,22 +2,21 @@
 @import "grid.scss";
 
 section {
-	max-width: 1200px;
-	margin: 2rem auto;
-	padding: 0 3px;
-	font-weight: normal;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 3px;
+  font-weight: normal;
 }
 
 a {
-	text-decoration: none;
-	color: var(--primary);
-	font-weight: 600;
-	transition: 0.2s;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  transition: 0.2s;
 }
 
 @media (hover: hover) {
-	a:hover {
-		color: var(--background-primary);
-	}
+  a:hover {
+    color: var(--background-primary);
+  }
 }
-

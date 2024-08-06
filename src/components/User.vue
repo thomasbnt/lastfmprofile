@@ -11,17 +11,20 @@
     <header>
       <div>
         <a :href="User.url" target="_blank" rel="noopener noreferrer" v-if="UserImage">
-          <img :src="UserImage" :alt="User.name + '\'s profile'" class="user_image">
+          <img :src="UserImage" :alt="User.name + '\'s profile'" class="user_image" />
         </a>
         <a :href="User.url" target="_blank" rel="noopener noreferrer" v-else>
-          <img src="/img/no_user.png" :alt="User.name + '\'s profile'" class="user_image">
-
+          <img src="/img/no_user.png" :alt="User.name + '\'s profile'" class="user_image" />
         </a>
         <div>
-          <h1>Hello <a :href="User.url" target="_blank" rel="noopener noreferrer">{{ User.name }}</a></h1>
+          <h1>
+            Hello <a :href="User.url" target="_blank" rel="noopener noreferrer">{{ User.name }}</a>
+          </h1>
           <p>{{ UserRegisteredSince }}</p>
-          <p><b>{{ User.playcount }} musics played</b>, with <b>{{ User.track_count }} uniques tracks</b> for a total of
-            <b>{{ User.album_count }} albums</b> !</p>
+          <p>
+            <b>{{ User.playcount }} musics played</b>, with <b>{{ User.track_count }} uniques tracks</b> for a total of
+            <b>{{ User.album_count }} albums</b> !
+          </p>
         </div>
       </div>
     </header>
@@ -36,7 +39,7 @@ export default {
       User: "",
       UserImage: "/assets/img/no_user.png",
       UserRegisteredSince: "",
-      ErrorUserNotFound: ""
+      ErrorUserNotFound: "",
     }
   },
   methods: {
@@ -61,11 +64,11 @@ export default {
     unixTimeToDate(unixTime) {
       const date = new Date(unixTime * 1000)
       return `Registered since ${date.toLocaleDateString()}`
-    }
+    },
   },
   async created() {
     await this.getUserInfoFromLastFM()
-  }
+  },
 }
 </script>
 
@@ -88,7 +91,7 @@ header > div {
   }
   @media screen and (max-width: 700px) {
     margin: 3rem auto;
-    padding: .4rem 3rem;
+    padding: 0.4rem 3rem;
   }
 }
 .user_image {
@@ -96,7 +99,7 @@ header > div {
   height: 100px;
   border-radius: 50%;
   box-shadow: var(--primary) 0 0 0 3px;
-  transition: .2s;
+  transition: 0.2s;
 
   &:hover {
     box-shadow: var(--primary) 0 0 0 6px;
@@ -117,5 +120,4 @@ header > div {
   text-transform: uppercase;
   border-radius: 5px;
 }
-
 </style>

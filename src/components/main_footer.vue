@@ -13,16 +13,10 @@
       </p>
     </div>
     <div class="footer__note">
+      <p class="footer__text">No affiliation with Last.FM. Last.FM is a registered trademark of Last.FM Ltd.</p>
       <p class="footer__text">
-        No affiliation with Last.FM. Last.FM is a registered trademark of Last.FM Ltd.
-      </p>
-      <p class="footer__text">
-        This is an open source project. No data is collected. <a
-        href="https://github.com/thomasbnt/lastfmprofile"
-        target="_blank"
-        rel="noopener noreferrer">
-        You can check the code here.
-      </a>
+        This is an open source project. No data is collected.
+        <a href="https://github.com/thomasbnt/lastfmprofile" target="_blank" rel="noopener noreferrer"> You can check the code here. </a>
       </p>
     </div>
   </footer>
@@ -35,8 +29,8 @@ export default {
   name: "mainFooter",
   components: {
     Music4,
-    Zap
-  }
+    Zap,
+  },
 }
 </script>
 
