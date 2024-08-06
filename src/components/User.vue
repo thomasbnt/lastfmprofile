@@ -22,8 +22,8 @@
           </h1>
           <p>{{ UserRegisteredSince }}</p>
           <p>
-            <b>{{ User.playcount }} musics played</b>, with <b>{{ User.track_count }} uniques tracks</b> for a total of
-            <b>{{ User.album_count }} albums</b> !
+            <b>{{ this.transformNumberIntoSpace(User.playcount) }} musics played</b>, with <b>{{ this.transformNumberIntoSpace(User.track_count) }} uniques tracks</b> for a total of
+            <b>{{this.transformNumberIntoSpace(User.album_count) }} albums</b> !
           </p>
         </div>
       </div>
@@ -64,6 +64,9 @@ export default {
     unixTimeToDate(unixTime) {
       const date = new Date(unixTime * 1000)
       return `Registered since ${date.toLocaleDateString()}`
+    },
+    transformNumberIntoSpace(number) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     },
   },
   async created() {
