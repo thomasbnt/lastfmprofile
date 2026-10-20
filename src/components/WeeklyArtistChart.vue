@@ -61,7 +61,7 @@ export default {
   methods: {
     async getWeeklyArtistChart() {
       if (localStorage.getItem("lastfm_key")) {
-        const username = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME
+        const username = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME || "thomasbnt"
         const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
         const limit = import.meta.env.VITE_LASTFM_LIMIT_FOR_ARTIST_CHART ? import.meta.env.VITE_LASTFM_LIMIT_FOR_ARTIST_CHART : 10
         try {
