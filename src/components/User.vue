@@ -45,7 +45,7 @@ export default {
   methods: {
     async getUserInfoFromLastFM() {
       if (localStorage.getItem("lastfm_key")) {
-        const customUsername = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME
+        const customUsername = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME || "thomasbnt"
         const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
         try {
           const response = await fetch(
