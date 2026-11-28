@@ -10,6 +10,9 @@
 
 An example to get your data from **Last.fm**. Work with **VueJS**, **fetch** and the **[API of Last.fm](https://www.last.fm/api)**.
 
+> [!IMPORTANT]
+> From **1st December 2026**, this project requires a **Last.fm Pro** subscription on the account that owns the API key. It only reads data, and the scrobbling methods that remain free are not used here. [Read the announcement →](https://support.last.fm/t/api-keys-will-require-pro-from-1st-december/121030)
+
 > **Note**
 >
 > [See the preview of this project here →](https://lastfmprofile.thomasbnt.dev/)
@@ -48,6 +51,12 @@ VITE_LASTFM_KEY=YOUR_API_KEY
 ### And how to get the Last.fm API key ?
 
 You can get your **Last.fm API key** [here](https://www.last.fm/api/account/create) or [grab an already created key](https://www.last.fm/api/accounts).
+
+From **1st December 2026**:
+
+- Creating a new key requires a **Last.fm Pro** account.
+- An existing key can only read data while its owner has an active **Pro** subscription.
+- Pro covers personal, non-commercial use. For commercial or research use, contact `partners@last.fm`.
 
 
 ## The behind the scene
