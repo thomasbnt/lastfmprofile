@@ -1,11 +1,19 @@
 <template>
-  <div v-if="ErrorUserNotFound" class="errNotFound">
-    {{ ErrorUserNotFound }}
+  <div v-if="ErrorMessage" class="errApi" role="alert">
+    <p>{{ ErrorMessage }}</p>
+    <p v-if="ShowProHint">
+      From 1st December 2026, reading data requires a Last.fm Pro subscription on the account that owns the API key.
+      <a href="https://support.last.fm/t/api-keys-will-require-pro-from-1st-december/121030" target="_blank" rel="noopener noreferrer"
+        >Read the announcement</a
+      >
+    </p>
   </div>
   <section v-if="!User" class="user_not_connected">
     <h1>Hello !</h1>
     <h2>Explore your music habits with personalized Last.fm statistics. Find out more about your listening habits right from this page.</h2>
     <small>To get your profile, insert your Last.fm key in settings section.</small>
+    <br />
+    <small>From 1st December 2026, the account that owns this key needs a Last.fm Pro subscription.</small>
   </section>
   <section v-if="User">
     <header>
@@ -39,7 +47,8 @@ export default {
       User: "",
       UserImage: "/assets/img/no_user.png",
       UserRegisteredSince: "",
-      ErrorUserNotFound: "",
+      ErrorMessage: "",
+      ShowProHint: false,
     }
   },
   methods: {
@@ -47,19 +56,37 @@ export default {
       if (localStorage.getItem("lastfm_key")) {
         const customUsername = localStorage.getItem("username") ? localStorage.getItem("username") : import.meta.env.VITE_USERNAME || "thomasbnt"
         const key = localStorage.getItem("lastfm_key") ? localStorage.getItem("lastfm_key") : import.meta.env.LASTFM_KEY
+        this.ErrorMessage = ""
+        this.ShowProHint = false
         try {
           const response = await fetch(
             `https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${customUsername}&api_key=${key}&format=json`
           )
           const data = await response.json()
+          if (data.error || !data.user) {
+            this.showApiError(data, response.status, customUsername)
+            return
+          }
           this.User = data.user
           this.UserImage = this.User.image[1]["#text"]
           this.UserRegisteredSince = this.unixTimeToDate(this.User.registered.unixtime)
         } catch (error) {
-          this.ErrorUserNotFound = `Username not found or no data for ${customUsername}.`
-          localStorage.removeItem("username")
+          console.error(error)
+          this.User = ""
+          this.ErrorMessage = "Unable to get a valid response from Last.fm. Please try again later."
+          this.ShowProHint = true
         }
       }
+    },
+    showApiError(data, status, username) {
+      // Last.fm error 6 is "User not found", it is unrelated to the API key
+      const userNotFound = data.error === 6
+      const reason = data.message || "Unknown error"
+      this.User = ""
+      this.ErrorMessage = userNotFound
+        ? `Last.fm: ${reason} (${username}).`
+        : `Last.fm refused the request: ${reason} (error ${data.error || status}).`
+      this.ShowProHint = !userNotFound
     },
     unixTimeToDate(unixTime) {
       const date = new Date(unixTime * 1000)
@@ -116,11 +143,16 @@ header > div {
   }
 }
 
-.errNotFound {
-  padding: 0.2rem 1rem;
+.errApi {
+  padding: 0.5rem 1rem;
   background-color: #c9342a;
   color: white;
-  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.4rem;
   border-radius: 5px;
+
+  a {
+    color: white;
+  }
 }
 </style>
